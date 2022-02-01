@@ -18,6 +18,7 @@ yarn add antd
 # https://nextjs.org/docs/testing#setting-up-jest-with-the-rust-compiler
 yarn add --dev cypress
 yarn add @faker-js/faker --dev
+yarn add --dev jest @testing-library/react @testing-library/jest-dom
 
 yarn add --dev start-server-and-test
 
