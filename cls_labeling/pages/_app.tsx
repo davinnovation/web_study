@@ -1,8 +1,15 @@
 // import App from "next/app";
-import type { AppProps /*, AppContext */ } from 'next/app'
+import type { AppProps /*, AppContext */ } from 'next/app';
+import { LabelItemProvider, ProjectProvider } from 'context/ItemContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ProjectProvider>
+      <LabelItemProvider>
+        <Component {...pageProps} />
+      </LabelItemProvider>
+    </ProjectProvider>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -17,4 +24,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 //   return { ...appProps }
 // }
 
-export default MyApp
+export default MyApp;

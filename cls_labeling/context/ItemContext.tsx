@@ -86,7 +86,7 @@ export function LabelItemProvider({ children }: { children: React.ReactNode }) {
     </LabelItemStateContext.Provider>
   );
 }
-export function LabelItemState() {
+export function getLabelItemState() {
   const state = useContext(LabelItemStateContext);
   if (!state) throw new Error('Cannot find LabelItemStateContext');
   return state
