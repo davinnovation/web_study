@@ -13,7 +13,10 @@ yarn add next react react-dom
 
 yarn next lint
 
-yarn add antd
+yarn add @mui/material @yarn add @emotion/cache
+emotion/react @emotion/styled
+
+yarn add react-virtual
 
 # https://nextjs.org/docs/testing#setting-up-jest-with-the-rust-compiler
 yarn add --dev cypress
@@ -23,3 +26,5 @@ yarn add --dev jest @testing-library/react @testing-library/jest-dom
 yarn add --dev start-server-and-test
 
 yarn dlx @yarnpkg/sdks vscode
+
+npx sb init

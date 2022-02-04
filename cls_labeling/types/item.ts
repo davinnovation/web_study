@@ -1,3 +1,8 @@
+interface ClsMeta {
+    cls: number[],
+    img_name : string
+}
+
 interface ImageMeta {
     img_id : number,
     img_url : string,

@@ -1,11 +1,16 @@
 import { getProjectState, getLabelItemState } from "context/ItemContext"
+import { Button, Container } from '@mui/material';
 
-
-function HomePage () {
+function HomePageLayout() {
     let a = getProjectState();
     let b = getLabelItemState();
 
-    return <div>current project_id : {a.project_id} | item state : {b.item_id} {b.label.length}</div>
+    return (
+        <Container maxWidth={false}>
+            <Button variant="contained">Hello World</Button>
+            current project_id : {a.project_id} | item state : {b.item_id} {b.label.length}
+        </Container>
+    )
 }
 
-export default HomePage
+export default HomePageLayout

@@ -1,14 +1,29 @@
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from 'next/app';
 import { LabelItemProvider, ProjectProvider } from 'context/ItemContext';
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import { ThemeProvider } from '@mui/material/styles';
 
-function MyApp({ Component, pageProps }: AppProps) {
+import createEmotionCache from 'cache/createEmotionCache';
+import theme from 'cache/theme';
+
+const clientSideEmotionCache = createEmotionCache();
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
+
+function MyApp(props: MyAppProps) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
-    <ProjectProvider>
-      <LabelItemProvider>
-        <Component {...pageProps} />
-      </LabelItemProvider>
-    </ProjectProvider>
+    <CacheProvider value={emotionCache}>
+      <ProjectProvider>
+        <LabelItemProvider>
+          <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </LabelItemProvider>
+      </ProjectProvider>
+    </CacheProvider>
   )
 }
 

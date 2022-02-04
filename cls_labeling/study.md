@@ -32,4 +32,7 @@
   - https://meetup.toast.com/posts/294
 
 - jest describe vs test
+
   - https://stackoverflow.com/questions/32055287/what-is-the-difference-between-describe-and-it-in-jest
+
+- react virtualized has deprecated (2020.04 last updated)
