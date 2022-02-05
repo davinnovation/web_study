@@ -13,24 +13,10 @@ export const Default = Template.bind({});
 Default.args = {
     tableHeight: "100%",
     tableWidth: "100%",
-    rows: [
-        ClsRow({
-            key: "0",
-            name: "test_image",
-            label: [0, 1],
-            onRowClick: (id: string) => { console.log(id) }
-        }),
-        ClsRow({
-            key: "1",
-            name: "test_image1",
-            label: [],
-            onRowClick: (id: string) => { console.log(id) }
-        }),
-        ClsRow({
-            key: "2",
-            name: "test_image2",
-            label: [0],
-            onRowClick: (id: string) => { console.log(id) }
-        })
-    ]
+    rows: Array(50).fill(0).map((_, i) => ClsRow({
+        key: i.toString(),
+        name: i.toString(),
+        label: [0, 1],
+        onRowClick: (id: string) => { console.log(id) }
+    }))
 }

@@ -15,7 +15,6 @@ function ClsRow({ key, name, label, onRowClick }: ClsRowProps) {
         labeled = { background: "#d9e048" }
     return (
         <TableRow
-            style={{ ...labeled }}
             hover
             onClick={(event) => onRowClick(event, key)}
         >
@@ -23,7 +22,7 @@ function ClsRow({ key, name, label, onRowClick }: ClsRowProps) {
                 borderRightStyle: "solid",
                 borderRightColor: "black",
             }}>{name}</TableCell>
-            <Divider orientation="vertical" />
+            <Divider light orientation="vertical" />
             <TableCell align="center">{label.map(item => (item.toString() + ' '))}</TableCell>
         </TableRow >
     )

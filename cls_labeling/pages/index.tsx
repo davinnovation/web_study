@@ -1,7 +1,7 @@
 import { getProjectState, getLabelItemState } from "context/ItemContext"
 import { Button, Container } from '@mui/material';
 
-function HomePageLayout() {
+function HomePage() {
     let a = getProjectState();
     let b = getLabelItemState();
 
@@ -13,4 +13,4 @@ function HomePageLayout() {
     )
 }
 
-export default HomePageLayout
+export default HomePage

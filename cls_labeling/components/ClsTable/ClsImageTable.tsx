@@ -1,4 +1,3 @@
-import { ImageMeta } from "types/item";
 import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Divider } from "@mui/material";
 import { useVirtual } from "react-virtual";
 import React from "react";
@@ -16,11 +15,13 @@ function ClsImageTable({ tableHeight, tableWidth, rows }: TableOption) {
         size: rows.length,
         parentRef,
         estimateSize: React.useCallback(() => 35, []), // TODO: flexible
-        overscan: 5, // TODO: flexible
+        overscan: 18, // TODO: flexible
     })
     return (
-        <TableContainer>
-            <Table>
+        <TableContainer
+            sx={{ maxHeight: tableHeight }}
+        >
+            <Table stickyHeader aria-label="sticky table">
                 <TableHead>
                     <TableRow>
                         <TableCell align="center">image name</TableCell>
@@ -28,13 +29,13 @@ function ClsImageTable({ tableHeight, tableWidth, rows }: TableOption) {
                         <TableCell align="center">label</TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
+                <TableBody ref={parentRef}>
                     {rowVirtualizer.virtualItems.map(virtualRow => (
                         rows[virtualRow.index]
                     ))}
-                    {rows.map(row => (
+                    {/* {rows.map(row => ( # non virtualized
                         row
-                    ))}
+                    ))} */}
                 </TableBody>
             </Table>
         </TableContainer>

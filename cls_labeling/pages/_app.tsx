@@ -6,6 +6,7 @@ import { ThemeProvider } from '@mui/material/styles';
 
 import createEmotionCache from 'cache/createEmotionCache';
 import theme from 'cache/theme';
+import { GlobalStyles } from '@mui/material';
 
 const clientSideEmotionCache = createEmotionCache();
 interface MyAppProps extends AppProps {
@@ -19,6 +20,11 @@ function MyApp(props: MyAppProps) {
       <ProjectProvider>
         <LabelItemProvider>
           <ThemeProvider theme={theme}>
+            <GlobalStyles
+              styles={{
+                body: { margin: 0 }
+              }}
+            />
             <Component {...pageProps} />
           </ThemeProvider>
         </LabelItemProvider>

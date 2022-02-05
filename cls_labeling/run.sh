@@ -13,7 +13,8 @@ yarn add next react react-dom
 
 yarn next lint
 
-yarn add @mui/material @yarn add @emotion/cache
+yarn add @mui/material @yarn add @emotion/cache 
+yarn add @mui/icons-material
 emotion/react @emotion/styled
 
 yarn add react-virtual
@@ -28,3 +29,8 @@ yarn add --dev start-server-and-test
 yarn dlx @yarnpkg/sdks vscode
 
 npx sb init
+
+# https://storybook.js.org/addons/storybook-addon-material-ui5/ storybook addon mui
+yarn add --dev storybook-addon-material-ui5
+
+# yarn set version berry

@@ -6,3 +6,8 @@
 - [ ] label export to JSON
 
 ## Project
+
+```dotnetcli
+yarn set version berry
+yarn
+```
