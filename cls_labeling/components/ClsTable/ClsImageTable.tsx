@@ -15,7 +15,7 @@ function ClsImageTable({ tableHeight, tableWidth, rows }: TableOption) {
         size: rows.length,
         parentRef,
         estimateSize: React.useCallback(() => 35, []), // TODO: flexible
-        overscan: 18, // TODO: flexible
+        overscan: 5, // TODO: flexible
     })
     return (
         <TableContainer
