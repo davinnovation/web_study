@@ -21,7 +21,7 @@ function ClsImageTable({ tableHeight, tableWidth, rows }: TableOption) {
         <TableContainer
             sx={{ maxHeight: tableHeight }}
         >
-            <Table stickyHeader aria-label="sticky table">
+            <Table stickyHeader size="small" aria-label="sticky table">
                 <TableHead>
                     <TableRow>
                         <TableCell align="center">image name</TableCell>

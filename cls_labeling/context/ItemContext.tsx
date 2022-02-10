@@ -42,6 +42,12 @@ export function getProjectState() {
   return state
 }
 
+export function getProjectDispatch() {
+  const dispatch = useContext(ProjectDispatchContext);
+  if (!dispatch) throw new Error('Cannot find ProjectDispatchContext');
+  return dispatch
+}
+
 type LabelItemState = {
   item_id: string,
   label: Array<number>
@@ -76,7 +82,7 @@ function labelitem_reducer(state: LabelItemState, action: LabelItemAction): Labe
 }
 
 export function LabelItemProvider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = useReducer(labelitem_reducer, {'item_id':"None", 'label': []});
+  const [state, dispatch] = useReducer(labelitem_reducer, {'item_id':"-1", 'label': []});
 
   return (
     <LabelItemStateContext.Provider value={state}>
@@ -90,4 +96,10 @@ export function getLabelItemState() {
   const state = useContext(LabelItemStateContext);
   if (!state) throw new Error('Cannot find LabelItemStateContext');
   return state
+}
+
+export function getLabelItemDispatch() {
+  const dispatch = useContext(LabelItemDispatchContext);
+  if (!dispatch) throw new Error('Cannot find LabelItemDispatchContext');
+  return dispatch
 }

@@ -4,11 +4,12 @@ interface ClsRowProps {
     key: string
     name: string
     label: number[],
-    onRowClick: any
+    onRowClick: any,
+    select: boolean
 }
 
 
-function ClsRow({ key, name, label, onRowClick }: ClsRowProps) {
+function ClsRow({ key, name, label, onRowClick, select }: ClsRowProps) {
 
     let labeled = { background: "#fafafa" }
     if (label.length > 0)
@@ -17,6 +18,7 @@ function ClsRow({ key, name, label, onRowClick }: ClsRowProps) {
         <TableRow
             hover
             onClick={(event) => onRowClick(event, key)}
+            selected={select}
         >
             <TableCell align="center" style={{
                 borderRightStyle: "solid",
