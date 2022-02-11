@@ -1,9 +1,9 @@
 # cls_labeling
 
-- [ ] image review list
-- [ ] classification - multiple labeling
-- [ ] store label to database
-- [ ] label export to JSON
+- [x] image review list
+- [x] classification - multiple labeling
+- [x] store label to database
+- [x] label export to JSON
 
 ## Project
 
