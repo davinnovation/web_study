@@ -5,6 +5,10 @@
 - [x] store label to database
 - [x] label export to JSON
 
+- [x] Upload Image
+- [x] Run Inference
+- [x] Show Inference probs for each class
+
 ## Project
 
 ```dotnetcli

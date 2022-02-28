@@ -4,9 +4,14 @@ interface ClsLabelInterface {
     src:string
 }
 
+const myLoader = ({ src, width, quality }) => {
+    return `${src}`
+}
+
 function ClsLabel ({src}:ClsLabelInterface) {
     return (
-        <Image 
+        <Image
+            loader={myLoader}
             src={src}
             alt="Cls Label"
             layout="fill"

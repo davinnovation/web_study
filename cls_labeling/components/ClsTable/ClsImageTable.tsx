@@ -5,17 +5,18 @@ import React from "react";
 interface TableOption {
     tableHeight: string,
     tableWidth: string,
-    rows: any[]
+    rows: any[],
+    row_length: number
 }
 
-function ClsImageTable({ tableHeight, tableWidth, rows }: TableOption) {
+function ClsImageTable({ tableHeight, tableWidth, rows, row_length }: TableOption) {
     const parentRef = React.useRef()
 
     const rowVirtualizer = useVirtual({
-        size: rows.length,
+        size: row_length,
         parentRef,
-        estimateSize: React.useCallback(() => 35, []), // TODO: flexible
-        overscan: 5, // TODO: flexible
+        estimateSize: React.useCallback(() => 40, []), // TODO: flexible
+        overscan: 10, // TODO: flexible
     })
     return (
         <TableContainer
@@ -30,12 +31,12 @@ function ClsImageTable({ tableHeight, tableWidth, rows }: TableOption) {
                     </TableRow>
                 </TableHead>
                 <TableBody ref={parentRef}>
-                    {rowVirtualizer.virtualItems.map(virtualRow => (
-                        rows[virtualRow.index]
-                    ))}
-                    {/* {rows.map(row => ( # non virtualized
-                        row
+                    {/* {rowVirtualizer.virtualItems.map(virtualRow => (
+                        rows[virtualRow.index] # TODO <- not upadting
                     ))} */}
+                    {rows.map(row => (
+                        row
+                    ))}
                 </TableBody>
             </Table>
         </TableContainer>
