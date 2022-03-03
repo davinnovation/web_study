@@ -68,10 +68,10 @@ async def upload_image(files: List[UploadFile]):
     import io
     with Session(engine) as session:
         client = Minio(
-            "localhost:9000",
+            "localhost:9001",
             secure=False,
-            access_key="MQR84LRP0ZHOWPH700E5",
-            secret_key="Itca6CJwQF0j7gVyR0vH2CbVmO++CnbGziVdXIuj"
+            access_key="EXAVEJZMEVFXX0Q608ET",
+            secret_key="xNWX4mrfavyKlmzw0MWoLv3E6Irt4yhz85VC+TjS"
         )
 
         for item in files:
@@ -83,7 +83,7 @@ async def upload_image(files: List[UploadFile]):
             client.put_object(
                 "image", image_name, content, length
             )
-            image_url = f"http://localhost:9000/image/{image_name}"
+            image_url = f"http://localhost:9001/image/{image_name}"
             data = Image(image_name=image_name[:-4], label="", image_url=image_url)
             session.add(data)
             session.commit()

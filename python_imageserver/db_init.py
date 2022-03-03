@@ -19,10 +19,10 @@ class Image(SQLModel, table=True):
 if __name__ == "__main__":
     engine = create_engine("sqlite:///image.db")
     client = Minio(
-        "localhost:9000",
+        "localhost:9001",
         secure=False,
-        access_key="MQR84LRP0ZHOWPH700E5",
-        secret_key="Itca6CJwQF0j7gVyR0vH2CbVmO++CnbGziVdXIuj"
+        access_key="EXAVEJZMEVFXX0Q608ET",
+        secret_key="xNWX4mrfavyKlmzw0MWoLv3E6Irt4yhz85VC+TjS"
     )
 
     bucket_found = client.bucket_exists("image")
@@ -46,7 +46,7 @@ if __name__ == "__main__":
             "image", image_name, image
         )
 
-        image_url = f"http://localhost:9000/image/{image_name}"
+        image_url = f"http://localhost:9001/image/{image_name}"
 
         images.append(
             Image(key=i, image_name=pathlib.Path(image).stem, label="", image_url=image_url)
